@@ -1,0 +1,94 @@
+
+GAIN_PROC_ASM
+
+	.if defined (GAIN_PROC_ASM)
+_INPUT_NUM_CHANNELS .equ 2
+_LEFT_CH .equ 0
+_RIGHT_CH .equ 1
+_LS_CH 	.equ 2
+_RS_CH .equ 3
+_BLOCK_SIZE .equ 16
+
+	.public _gainProcessing
+	.extern _variablesGain
+	.extern _mode
+	.extern _enable
+	.extern _invDegree
+	.extern _invGain
+	.extern _inverter
+ 	.code_ovly 
+ 	
+ 	# prema CCC2 pozivnoj konvenciji: 
+ 	# i0 - parametar pokazivac, pIn
+ 	# i1 - parametar pokazivac, pOut	
+_gainProcessing:
+	#i4 = i0 + (_RIGHT_CH * _BLOCK_SIZE)
+	#i5 = i1 + (_RS_CH * _BLOCK_SIZE)
+	do(_BLOCK_SIZE),>loop
+			i4 = i0 + (_RIGHT_CH * _BLOCK_SIZE)
+		 	i5 = i1 + (_RIGHT_CH * _BLOCK_SIZE)
+		 	x0 = ymem[i0]
+		 	y0 = xmem[_variablesGain]
+		 	a0 = x0 * y0
+		 	ymem[i1] = a0
+		 	
+		 	x1 = ymem[i4]
+		 	a1 = x1 * y0
+		 	ymem[i5] = a1
+		 	
+		 	i5 = i1 + (_LS_CH * _BLOCK_SIZE)
+		 	ymem[i5] = a0
+		 	
+		 	i5 = i1 + (_RS_CH * _BLOCK_SIZE)
+		 	ymem[i5] = a1
+		 	
+			i0+=1
+			i1+=1				 			 		 										 	
+%loop:	nop
+		b0 = xmem[_mode] 
+		if(b > 0) jmp>prov
+		i0 = i0 - _BLOCK_SIZE
+		i1 = i1 - _BLOCK_SIZE	
+		
+		i4 = (0)
+		nop
+
+%prov:	i4+=1
+
+		#a1 = xmem[_data]
+		#fixed16(a0) = (0x7fff)
+		#lo16(a0) = (0xffff)
+		#dry
+		#a0 = a0 - a1
+		do(_BLOCK_SIZE),>invert
+			a1 = xmem[_inverter]
+			fixed16(a0) = (0x7fff)
+			lo16(a0) = (0xffff)
+			#dry
+			a0 = a0 - a1
+			x0 = ymem[i0]
+			y0 = a0
+			a0 = x0 * y0
+			y0 = xmem[_inverter]
+			a1 = x0 * y0
+			a0 = a0 - a1
+			y0 = xmem[_inverter+1]
+			x0 = a0
+			a0 = x0 * y0
+			ymem[i1] = a0
+			i0+=1
+			i1+=1		
+%invert:	nop
+			i0 = i0 - _BLOCK_SIZE
+			i1 = i1 - _BLOCK_SIZE
+			i0 = i0 + (_RIGHT_CH * _BLOCK_SIZE)
+			i1 = i1 + (_RIGHT_CH * _BLOCK_SIZE)
+			b0 = i4
+			uhalfword(b1) = (2)
+			b1 - b0
+			if(b > 0)jmp <prov	 
+
+			ret
+	
+	.endif
+	

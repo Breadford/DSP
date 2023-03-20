@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<settings built="false" last_build_time="1669739092494">
+	<dependencies>
+		<source_file last_build_time="1669734488914" path="gen/src/example_ovly_odt.a">
+			<dependency>../../../../../crystal32/common/inc/ovly_version.h</dependency>
+		</source_file>
+	</dependencies>
+</settings>

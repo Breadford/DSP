@@ -1,0 +1,10 @@
+"D:\AADSP2\PROJEKAT\multitapEcho\Tools\PCMCompare.exe" -b16 "D:\AADSP2\PROJEKAT\multitapEcho\test_outputs\Tone_L1k_R3k_1_1_0.5132_1.0_1.0\out_Tone_L1k_R3k_1_1_0.5132_1.0_1.0_m0.wav" "D:\AADSP2\PROJEKAT\multitapEcho\test_outputs\Tone_L1k_R3k_1_1_0.5132_1.0_1.0\out_Tone_L1k_R3k_1_1_0.5132_1.0_1.0_m1.wav"
+      No differences encountered!
+
+      No differences encountered!
+
+"D:\AADSP2\PROJEKAT\multitapEcho\Tools\PCMCompare.exe" -b16 "D:\AADSP2\PROJEKAT\multitapEcho\test_outputs\Tone_L1k_R3k_1_1_0.5132_1.0_1.0\out_Tone_L1k_R3k_1_1_0.5132_1.0_1.0_m1.wav" "D:\AADSP2\PROJEKAT\multitapEcho\test_outputs\Tone_L1k_R3k_1_1_0.5132_1.0_1.0\out_Tone_L1k_R3k_1_1_0.5132_1.0_1.0_m2.wav"
+      No differences encountered!
+
+      No differences encountered!
+

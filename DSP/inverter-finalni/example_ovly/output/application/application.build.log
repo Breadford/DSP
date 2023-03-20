@@ -1,0 +1,23 @@
+============= BUILDING STARTED ============
+  Project: example_ovly
+===========================================
+Linking files...
+C:/CirrusDSP/bin/clink
+ -oC:/CirrusDSP/clide/workspace/example_ovly/output/application/example_ovly__application_1_0_0.img
+ -fC:/CirrusDSP/crystal32/memory_maps/v01.mem.xml
+ --output_type=RAM
+ --overlay_type=application
+ -lC:/CirrusDSP/lib/
+ -lC:/CirrusDSP/lib/dsplib
+ -lC:/CirrusDSP/lib/dsplib/crystal32/
+ -lC:/CirrusDSP/crystal32/common/lib/
+C:/CirrusDSP/clide/workspace/example_ovly/output/application/gen/src/example_ovly_odt.O
+C:/CirrusDSP/clide/workspace/example_module/output/example_module_1_0_0.olib
+     [exec] Error #506: Unresolved external symbol: _variablesGain
+     [exec]                         used in module: C:/CirrusDSP/clide/workspace/example_module/output/example_module_1_0_0.olib|src\gainProc
+     [exec] 1 error(s) encountered during symbol relocation!
+
+BUILD FAILED
+C:\CirrusDSP\clide\workspace\example_ovly\output\application\application.build.xml:4: exec returned: 1
+
+Total time: 0 seconds

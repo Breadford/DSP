@@ -1,0 +1,2 @@
+Error #506: Unresolved external symbol: _variablesGain
+                        used in module: C:/CirrusDSP/clide/workspace/example_module/output/example_module_1_0_0.olib|src\gainProc

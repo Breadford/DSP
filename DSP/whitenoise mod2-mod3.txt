@@ -1,0 +1,5 @@
+./PCMCompare D:/AADSP2/PROJEKAT/TestStreams/WhiteNoise_probnimod2.wav D:/AADSP2/PROJEKAT/TestStreams/WhiteNoise_probnimod3.wav
+    Recorded file is 3640419 samples shorter than the reference file!
+    Test error! Recorded file is 3640419 samples shorter than the reference file!
+      No differences encountered!
+      No differences encountered!

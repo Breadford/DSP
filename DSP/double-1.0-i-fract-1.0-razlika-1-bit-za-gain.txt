@@ -1,0 +1,28 @@
+./PCMCompare D:/AADSP2/PROJEKAT/TestStreams/WhiteNoise_probnimod0.wav D:/AADSP2/PROJEKAT/TestStreams/WhiteNoise_probnimod2.wav
+    Max difference is 1 (1 bits, -96.33dB)
+    Max difference is 1 (1 bits, -96.33dB)
+    3840000 samples compared
+   -----------------------------------------------------------
+    Dif(bits) |    Samples    |   PERCENT  |   First dif
+   -----------------------------------------------------------
+         1    |     276047    |    7.19%   |  0x0000003e
+   -----------------------------------------------------------
+      Error   |     276047    |    7.19%
+
+./PCMCompare D:/AADSP2/PROJEKAT/TestStreams/WhiteNoise_probnimod0.wav D:/AADSP2/PROJEKAT/TestStreams/WhiteNoise_probnimod3.wav
+    Recorded file is 3640419 samples shorter than the reference file!
+    Test error! Recorded file is 3640419 samples shorter than the reference file!
+    Max difference is 1 (1 bits, -96.33dB)
+    Max difference is 1 (1 bits, -96.33dB)
+    199581 samples compared
+   -----------------------------------------------------------
+    Dif(bits) |    Samples    |   PERCENT  |   First dif
+   -----------------------------------------------------------
+         1    |      14475    |    7.25%   |  0x0000003e
+   -----------------------------------------------------------
+      Error   |      14475    |    7.25%
+PS D:\AADSP2\v1\VE-1\tools> ./PCMCompare D:/AADSP2/PROJEKAT/TestStreams/WhiteNoise_probnimod2.wav D:/AADSP2/PROJEKAT/TestStreams/WhiteNoise_probnimod3.wav
+    Recorded file is 3640419 samples shorter than the reference file!
+    Test error! Recorded file is 3640419 samples shorter than the reference file!
+      No differences encountered!
+      No differences encountered!

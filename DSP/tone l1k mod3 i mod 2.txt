@@ -1,0 +1,3 @@
+./PCMCompare D:/AADSP2/PROJEKAT/TestStreams/Tone_L1k_R3k_model3.wav D:/AADSP2/PROJEKAT/TestStreams/Tone_L1k_R3k_model2.wav
+      No differences encountered!
+      No differences encountered!
